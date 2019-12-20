@@ -2,7 +2,9 @@
 Originally written in C++ in December 2019. Inspired by [Anthony Morphett's online Turing Machine simulator](http://morphett.info/turing/turing.html).
 
 ## How to run
-Compile the code locally and run it from the command line or your IDE of choice. The program does not require any command line arguments, but you may specify the code file for the Turing Machine in the first argument and the input for the input tape in the second argument.
+Compile the code locally and run it from the command line or your IDE of choice. The program does not require any command line arguments, but you may specify the code file for the Turing Machine in the first argument and the input for the input tape in the second argument. For instance:
+
+./a.out examples/string_length_squared.txt aaa
 
 ## Syntax
 The simulator relies on a "punch card" system by using states with numerous configurations. The general format is as follows:
