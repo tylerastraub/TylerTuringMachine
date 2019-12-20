@@ -1,0 +1,61 @@
+; this program takes a string consisting of a's and squares its length
+; for instance, the string aaa becomes aaaaaaaaa (going from length 3 to 9)
+
+; state 0 - move to end of string and write separator ($)
+0 _ $ l 1
+0 * * r 0
+
+; state 1 - on original string
+1 a a r 1
+1 $ $ l 2
+
+; state 2 - mark where we've been
+2 b b l 2
+2 a b r 3
+
+; state 3 - get to leftmost character
+3 * * l 3
+3 _ _ r 4
+
+; state 4 - check we are not done
+4 b b r 4
+4 a a r 5
+4 $ a r 6
+
+; state 5 - ok let's get ready to multiply by moving back left
+5 * * l 5
+5 _ _ r 8
+
+; state 6 - wrap it up
+6 a a r 6
+6 _ _ l 7
+
+; state 7 - almost final step
+7 a _ l 12
+
+; state 8 - multiply! (pt. 1)
+8 a c r 9
+8 c c r 8 ; temporarily change original string a's to c's and b's to d's
+8 b d r 9
+8 d d r 8
+8 $ $ l 10
+
+; state 9
+9 _ a l 10
+9 * * r 9
+
+; state 10 - go back left
+10 _ _ r 11 ; we are done for this round
+10 a a l 5
+10 b b l 5
+10 * * l 10
+
+; state 11 - revert original string
+11 c a r 11
+11 d b r 11
+11 $ $ * 1
+
+; state 12 - final accept
+12 a a l 12
+12 b a l 12
+12 _ _ * halt_accept
