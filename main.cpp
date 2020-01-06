@@ -22,6 +22,9 @@ int main(int argc, char* argv[]) {
                 << std::endl;
             break;
     }
+	
+	std::cout << "Turing Machine finished running.";
+	system("pause"); // only works on windows
 
     return 0;
 }
