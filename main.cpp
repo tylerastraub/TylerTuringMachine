@@ -23,10 +23,8 @@ int main(int argc, char* argv[]) {
             break;
     }
 	
-	std::cout << "Turing Machine finished running.";
-	system("pause"); // only works on windows
+	std::cout << "Turing Machine finished running. Input any key to quit: ";
+    std::getchar();
 
     return 0;
 }
-
-// TODO: start actually interacting with input tape based on states

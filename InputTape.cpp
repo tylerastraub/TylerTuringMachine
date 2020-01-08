@@ -90,4 +90,11 @@ void InputTape::display_tape()
     }
 
     std::cout << std::endl;
+
+    // display arrow
+    for(int i = 0; i < head_index + left_tape.size(); ++i)
+    {
+        std::cout << " ";
+    }
+    std::cout << "^" << std::endl;
 }

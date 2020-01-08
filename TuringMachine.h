@@ -20,7 +20,7 @@ public:
     void run();
 
     bool build_state_map();
-    void advance_past_spaces(int &index, std::string string, int line);
+    static void advance_past_spaces(int &index, std::string string, int line);
     void print_states();
 
 private:
